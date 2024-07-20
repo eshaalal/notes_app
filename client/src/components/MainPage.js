@@ -22,7 +22,7 @@ function MainPage({ logout }) {
   const fetchNotes = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get("https://notesme-backend.onrender.com/api/notes", {
+      const response = await axios.get("https://notes-app-gklb.onrender.com/api/notes", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setNotes(response.data);
