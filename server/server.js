@@ -9,7 +9,7 @@ const noteRoutes = require("./routes/notes");
 
 const allowedOrigins = [
   "http://localhost:3000", // Local development
-  // "https://notesbuddy.vercel.app" // Deployed frontend
+  "https://notesbuddy.vercel.app" // Deployed frontend
 ];
 
 const corsOptions = {

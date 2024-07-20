@@ -22,7 +22,7 @@ function MainPage({ logout }) {
   const fetchNotes = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get("https://notes-app-gklb.onrender.com/api/notes", {
+      const response = await axios.get("https://notes-app-ewq8.onrender.com/api/notes", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setNotes(response.data);
@@ -48,7 +48,7 @@ function MainPage({ logout }) {
       try {
         const token = localStorage.getItem("token");
         const response = await axios.post(
-          "https://notes-app-gklb.onrender.com/api/notes",
+          "https://notes-app-ewq8.onrender.com/api/notes",
           {
             text: newNote,
             color: getRandomColor(),
@@ -68,7 +68,7 @@ function MainPage({ logout }) {
   const deleteNote = async (id) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`https://notes-app-gklb.onrender.com/api/notes/${id}`, {
+      await axios.delete(`https://notes-app-ewq8.onrender.com/api/notes/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setNotes(notes.filter((note) => note._id !== id));
@@ -81,7 +81,7 @@ function MainPage({ logout }) {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.put(
-        `https://notes-app-gklb.onrender.com/api/notes/${id}`,
+        `https://notes-app-ewq8.onrender.com/api/notes/${id}`,
         { text: newText },
         {
           headers: { Authorization: `Bearer ${token}` },
