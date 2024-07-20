@@ -7,13 +7,20 @@ const cors = require("cors");
 const authRoutes = require("./routes/auth");
 const noteRoutes = require("./routes/notes");
 
-const app = express();
-const frontendOrigin = "https://notesbuddy.vercel.app";
+const allowedOrigins = [
+  "http://localhost:3000", // Local development
+  "https://notesbuddy.vercel.app" // Deployed frontend
+];
 
-// Configure CORS
 const corsOptions = {
-  origin: frontendOrigin,
-  optionsSuccessStatus: 200 // For legacy browser support
+  origin: function (origin, callback) {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  optionsSuccessStatus: 200
 };
 
 app.use(cors(corsOptions));
