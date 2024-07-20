@@ -8,8 +8,15 @@ const authRoutes = require("./routes/auth");
 const noteRoutes = require("./routes/notes");
 
 const app = express();
+const frontendOrigin = "https://notesbuddyy.netlify.app";
 
-app.use(cors());
+// Configure CORS
+const corsOptions = {
+  origin: frontendOrigin,
+  optionsSuccessStatus: 200 // For legacy browser support
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
