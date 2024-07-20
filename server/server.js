@@ -8,7 +8,7 @@ const authRoutes = require("./routes/auth");
 const noteRoutes = require("./routes/notes");
 
 const app = express();
-const frontendOrigin = "https://notesbuddyy.netlify.app";
+const frontendOrigin = "https://notesbuddy.vercel.app";
 
 // Configure CORS
 const corsOptions = {
