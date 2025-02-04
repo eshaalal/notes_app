@@ -62,3 +62,5 @@ NotedBuddy is a web-based note-making application designed to help users create,
 -Enable real-time collaboration for shared note-taking. 🤝
 -Integrate cloud synchronization across multiple platforms. 🔄
 
+🎥 [Watch the demo video](https://youtu.be/pbJXWqyffPE)
+
